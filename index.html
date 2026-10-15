@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080809" />
+    <meta
+      name="description"
+      content="وب‌سایت شخصی طاها رضاپور؛ علاقه‌مند به طراحی وب، وردپرس، برنامه‌نویسی و هوش مصنوعی."
+    />
+    <title>tahivo | طاها رضاپور</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap");
+      :root {
+        --bg: #080809;
+        --panel: #101013;
+        --red: #ff2638;
+        --text: #f5f5f7;
+        --muted: #a1a1aa;
+        --border: #29292f;
+        --max: 1160px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+      body {
+        font-family: "Vazirmatn", Tahoma, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.9;
+        overflow-x: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+      }
+      .container {
+        width: min(var(--max), calc(100% - 40px));
+        margin: auto;
+      }
+      section {
+        scroll-margin-top: 90px;
+      }
+      .red {
+        color: var(--red);
+      }
+      body:before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background:
+          radial-gradient(ellipse at 78% 15%, #7c10151c, transparent 35%),
+          radial-gradient(ellipse at 10% 65%, #6d0a1410, transparent 35%);
+      }
+      header {
+        height: 74px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: #080809ed;
+        border-bottom: 1px solid #ffffff12;
+        backdrop-filter: blur(18px);
+      }
+      .nav {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        direction: ltr;
+        font-size: 27px;
+        font-weight: 900;
+        letter-spacing: -1px;
+      }
+      .logo-mark {
+        width: 31px;
+        height: 31px;
+        background: var(--red);
+        clip-path: polygon(
+          30% 0,
+          100% 0,
+          67% 36%,
+          100% 36%,
+          27% 100%,
+          39% 57%,
+          0 57%
+        );
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+      }
+      .nav-links a {
+        color: #d0d0d6;
+        font-size: 13px;
+        transition: 0.2s;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--red);
+      }
+      .nav-cta {
+        border: 1px solid #ff263858;
+        padding: 8px 14px;
+        border-radius: 9px;
+        font-size: 12px;
+      }
+      .nav-cta:hover {
+        background: var(--red);
+      }
+      .menu-toggle {
+        display: none;
+        border: 1px solid var(--border);
+        color: white;
+        background: #121215;
+        border-radius: 9px;
+        width: 42px;
+        height: 42px;
+        cursor: pointer;
+        font-size: 23px;
+      }
+      .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+        min-height: 45px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        font-size: 13px;
+        font-weight: 700;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+      .btn-primary {
+        background: var(--red);
+        color: white;
+        box-shadow: 0 8px 28px #ff26382b;
+      }
+      .btn-primary:hover {
+        background: #ff4050;
+      }
+      .btn-outline {
+        border-color: #ff26387a;
+        background: #080809;
+        color: white;
+      }
+      .btn-outline:hover {
+        background: #ff263814;
+      }
+      .hero {
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        align-items: center;
+        gap: 35px;
+        padding: 66px 0 58px;
+        min-height: 520px;
+      }
+      .hero-copy {
+        position: relative;
+        z-index: 2;
+      }
+      .eyebrow {
+        color: var(--red);
+        font-size: 12px;
+        letter-spacing: 4px;
+        font-weight: 700;
+        margin-bottom: 13px;
+        direction: ltr;
+        text-align: right;
+      }
+      .hero h1 {
+        font-size: clamp(32px, 4vw, 52px);
+        line-height: 1.55;
+        font-weight: 900;
+        letter-spacing: -1.3px;
+      }
+      .hero h2 {
+        font-size: clamp(15px, 1.6vw, 19px);
+        color: #e2e2e7;
+        font-weight: 600;
+        margin-top: 7px;
+      }
+      .hero-description {
+        color: var(--muted);
+        font-size: 14px;
+        max-width: 510px;
+        margin-top: 17px;
+        line-height: 2.2;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 26px;
+      }
+      .hero-meta {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        color: var(--muted);
+        font-size: 11px;
+        margin-top: 25px;
+      }
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #35db87;
+        box-shadow: 0 0 12px #35db87;
+      }
+      .portrait-wrap {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: 370px;
+      }
+      .portrait-wrap:before {
+        content: "";
+        position: absolute;
+        width: 290px;
+        height: 290px;
+        border-radius: 50%;
+        background: #ff17251a;
+        filter: blur(45px);
+      }
+      .portrait-frame {
+        width: 260px;
+        height: 260px;
+        position: relative;
+        border-radius: 50%;
+        padding: 6px;
+        background: linear-gradient(145deg, #ff2638, #76101d 55%, #34343a);
+        box-shadow:
+          0 0 0 1px #ff26383d,
+          0 0 55px #ff263821;
+        animation: float 5s ease-in-out infinite;
+      }
+      .portrait-frame img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center 42%;
+        border: 4px solid #101013;
+        background: #222;
+      }
+      .portrait-ring {
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        border: 1px solid #ff26384a;
+        border-radius: 50%;
+        animation: spin 28s linear infinite;
+      }
+      .portrait-ring:before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--red);
+        top: 36px;
+        left: 44px;
+        box-shadow: 0 0 18px var(--red);
+      }
+      .portrait-tag {
+        position: absolute;
+        bottom: 30px;
+        right: calc(50% - 155px);
+        background: #101013;
+        border: 1px solid #ff263859;
+        border-radius: 12px;
+        padding: 10px 15px;
+        font-size: 12px;
+        box-shadow: 0 12px 30px #0008;
+      }
+      .portrait-tag b {
+        color: var(--red);
+        direction: ltr;
+        display: inline-block;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-9px);
+        }
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .section {
+        padding: 25px 0 75px;
+      }
+      .section-heading {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .section-heading h2 {
+        font-size: 27px;
+        font-weight: 900;
+      }
+      .section-heading h2:before {
+        content: "";
+        display: inline-block;
+        width: 28px;
+        height: 3px;
+        background: var(--red);
+        vertical-align: middle;
+        margin-left: 12px;
+      }
+      .section-heading p {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 5px;
+      }
+      .skill-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+      .skill-card {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
+        border: 1px solid var(--border);
+        border-radius: 17px;
+        background: linear-gradient(135deg, #101013, #0a0a0c);
+        transition: 0.25s;
+        min-height: 125px;
+      }
+      .skill-card:hover {
+        border-color: #ff26385a;
+        transform: translateY(-4px);
+      }
+      .skill-icon {
+        flex-shrink: 0;
+        width: 58px;
+        height: 58px;
+        display: grid;
+        place-items: center;
+        border: 1px solid #ff26384b;
+        border-radius: 50%;
+        color: var(--red);
+        background: #ff26380a;
+        font-size: 21px;
+        font-weight: 900;
+        direction: ltr;
+      }
+      .skill-card h3 {
+        font-size: 14px;
+        font-weight: 800;
+      }
+      .skill-card p {
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 4px;
+        line-height: 1.9;
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .project-card {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 18px;
+        padding: 16px;
+        border: 1px solid var(--border);
+        border-radius: 17px;
+        background: linear-gradient(140deg, #101014, #0a0a0c);
+        transition: 0.25s;
+      }
+      .project-card:hover {
+        border-color: #ff263850;
+        transform: translateY(-4px);
+      }
+      .project-visual {
+        min-height: 200px;
+        border-radius: 12px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .tahivo-visual {
+        background:
+          radial-gradient(ellipse at 70% 30%, #ff263837, transparent 45%),
+          linear-gradient(140deg, #24070b, #0d080b 65%, #37070e);
+        border: 1px solid #ff26382b;
+      }
+      .tahivo-logo {
+        direction: ltr;
+        font-size: 34px;
+        font-weight: 900;
+        letter-spacing: -2px;
+      }
+      .tahivo-logo b {
+        color: var(--red);
+      }
+      .visual-caption {
+        position: absolute;
+        bottom: 12px;
+        color: #b4a0a4;
+        font-size: 9px;
+        letter-spacing: 3px;
+        direction: ltr;
+      }
+      .racer-visual {
+        background:
+          radial-gradient(ellipse at 50% 100%, #e600fa3b, transparent 45%),
+          linear-gradient(180deg, #0b1430, #11102a 60%, #17091d);
+        border: 1px solid #7135a55c;
+      }
+      .road {
+        position: absolute;
+        bottom: -25px;
+        width: 85%;
+        height: 140px;
+        background: linear-gradient(90deg, #151426, #25203b, #151426);
+        clip-path: polygon(35% 0, 65% 0, 100% 100%, 0 100%);
+      }
+      .road:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 49%;
+        width: 3px;
+        height: 100%;
+        background: repeating-linear-gradient(
+          to bottom,
+          #e8e3ff 0 15px,
+          transparent 15px 30px
+        );
+      }
+      .car {
+        position: absolute;
+        z-index: 2;
+        bottom: 42px;
+        width: 78px;
+        height: 36px;
+        background: linear-gradient(#ff405b, #9b0a34);
+        border: 1px solid #ff8cbb;
+        border-radius: 13px 13px 8px 8px;
+        box-shadow: 0 0 20px #ff1d8e7d;
+      }
+      .car:before {
+        content: "";
+        position: absolute;
+        width: 36px;
+        height: 18px;
+        left: 20px;
+        top: -12px;
+        border-radius: 9px 9px 2px 2px;
+        background: #152846;
+        border: 1px solid #8cf8ff;
+      }
+      .project-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px 0;
+      }
+      .project-content h3 {
+        font-size: 17px;
+        direction: ltr;
+      }
+      .project-type {
+        color: var(--red);
+        font-size: 11px;
+        margin-top: 3px;
+      }
+      .project-content p {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 2;
+        margin-top: 9px;
+      }
+      .project-link {
+        display: inline-flex;
+        gap: 8px;
+        margin-top: auto;
+        padding-top: 15px;
+        color: var(--red);
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .about-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding: 30px;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        background: linear-gradient(135deg, #121013, #0b0b0d);
+      }
+      .about-box h2 {
+        font-size: 25px;
+        line-height: 1.7;
+      }
+      .about-box p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 2.3;
+        margin-top: 11px;
+      }
+      .facts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .fact {
+        border: 1px solid #292329;
+        border-radius: 13px;
+        padding: 16px;
+        background: #0a090b;
+      }
+      .fact span {
+        display: block;
+        color: var(--red);
+        font-size: 11px;
+      }
+      .fact strong {
+        font-size: 13px;
+      }
+      .contact-box {
+        text-align: center;
+        padding: 40px 20px;
+        border: 1px solid #ff263833;
+        border-radius: 20px;
+        background:
+          radial-gradient(ellipse at 50% 0%, #ff263810, transparent 70%),
+          #0c0b0d;
+      }
+      .contact-box h2 {
+        font-size: 26px;
+      }
+      .contact-box p {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 9px auto 23px;
+      }
+      .contact-actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .contact-note {
+        font-size: 11px;
+        color: #777781;
+        margin-top: 18px;
+      }
+      footer {
+        border-top: 1px solid #ffffff12;
+        padding: 22px 0;
+        background: #09090b;
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+      .footer-copy {
+        font-size: 11px;
+        color: #777781;
+      }
+      .footer-social {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .footer-social a {
+        color: #c9c9d0;
+        font-size: 12px;
+      }
+      .footer-social a:hover {
+        color: var(--red);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          animation: none !important;
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+      }
+      @media (max-width: 900px) {
+        .nav-links {
+          gap: 16px;
+        }
+        .hero-grid {
+          gap: 10px;
+        }
+        .portrait-frame {
+          width: 225px;
+          height: 225px;
+        }
+        .portrait-ring {
+          width: 280px;
+          height: 280px;
+        }
+        .skill-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .project-card {
+          grid-template-columns: 1fr;
+        }
+        .project-visual {
+          min-height: 185px;
+        }
+        .project-content {
+          min-height: 175px;
+        }
+      }
+      @media (max-width: 650px) {
+        .container {
+          width: calc(100% - 32px);
+        }
+        header {
+          height: 66px;
+        }
+        .logo {
+          font-size: 25px;
+        }
+        .menu-toggle {
+          display: grid;
+          place-items: center;
+        }
+        .nav-cta {
+          display: none;
+        }
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 66px;
+          left: 16px;
+          right: 16px;
+          padding: 13px;
+          border: 1px solid var(--border);
+          border-radius: 14px;
+          background: #101013;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+        }
+        .nav-links.open {
+          display: flex;
+        }
+        .nav-links a {
+          padding: 10px 8px;
+          border-bottom: 1px solid #ffffff0b;
+        }
+        .nav-links a:last-child {
+          border-bottom: 0;
+        }
+        .hero-grid {
+          grid-template-columns: 1fr;
+          padding: 38px 0 30px;
+          gap: 0;
+        }
+        .hero-copy {
+          text-align: center;
+        }
+        .eyebrow {
+          text-align: center;
+          font-size: 10px;
+        }
+        .hero h1 {
+          font-size: 33px;
+        }
+        .hero h2 {
+          font-size: 14px;
+        }
+        .hero-description {
+          font-size: 12px;
+          margin: 12px auto 0;
+        }
+        .hero-actions {
+          justify-content: center;
+          margin-top: 20px;
+        }
+        .hero-actions .btn {
+          flex: 1;
+          max-width: 190px;
+          padding: 10px;
+        }
+        .hero-meta {
+          justify-content: center;
+          margin-top: 18px;
+        }
+        .portrait-wrap {
+          min-height: 300px;
+          margin-top: 8px;
+        }
+        .portrait-frame {
+          width: 210px;
+          height: 210px;
+        }
+        .portrait-ring {
+          width: 260px;
+          height: 260px;
+        }
+        .portrait-tag {
+          bottom: 17px;
+          right: calc(50% - 137px);
+        }
+        .section {
+          padding: 18px 0 52px;
+        }
+        .section-heading h2 {
+          font-size: 23px;
+        }
+        .skill-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .skill-card {
+          padding: 15px;
+          min-height: 105px;
+        }
+        .skill-icon {
+          width: 49px;
+          height: 49px;
+        }
+        .project-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+        .project-card {
+          grid-template-columns: 1fr;
+          padding: 13px;
+          gap: 12px;
+        }
+        .project-visual {
+          min-height: 200px;
+        }
+        .project-content {
+          min-height: 165px;
+          padding: 4px;
+        }
+        .about-box {
+          grid-template-columns: 1fr;
+          padding: 22px 17px;
+          gap: 22px;
+        }
+        .about-box h2 {
+          font-size: 22px;
+        }
+        .about-box p {
+          font-size: 12px;
+        }
+        .fact {
+          padding: 13px 10px;
+        }
+        .fact strong {
+          font-size: 12px;
+        }
+        .contact-box {
+          padding: 30px 15px;
+        }
+        .contact-box h2 {
+          font-size: 22px;
+        }
+        .footer-inner {
+          flex-direction: column;
+          text-align: center;
+          gap: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a href="#home" class="logo" aria-label="tahivo صفحه اصلی"
+          ><span class="logo-mark"></span><span>tahivo</span></a
+        >
+        <nav class="nav-links" id="navLinks" aria-label="منوی اصلی">
+          <a href="#home" class="active">خانه</a><a href="#about">درباره من</a
+          ><a href="#skills">مهارت‌ها</a><a href="#projects">پروژه‌ها</a
+          ><a href="#contact">ارتباط</a>
+        </nav>
+        <a class="nav-cta" href="#contact">ارتباط با من ↗</a>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="باز کردن منو"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">TAHA REZAPOUR · TAHIVO</div>
+            <h1>سلام، من <span class="red">طاها رضاپور</span> هستم</h1>
+            <h2>
+              هنرجوی کامپیوتر <span class="red">|</span> علاقه‌مند به تکنولوژی
+            </h2>
+            <p class="hero-description">
+              در مسیر یادگیری، ساختن و تبدیل ایده‌ها به پروژه‌های واقعی. اینجا
+              بخشی از مسیر من در دنیای طراحی وب، برنامه‌نویسی و هوش مصنوعی است.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary"
+                >دیدن پروژه‌ها <span>←</span></a
+              ><a href="#contact" class="btn btn-outline">ارتباط با من ↗</a>
+            </div>
+            <div class="hero-meta">
+              <span class="status-dot"></span
+              ><span>در حال یادگیری و ساخت پروژه‌های جدید</span>
+            </div>
+          </div>
+          <div class="portrait-wrap">
+            <div class="portrait-ring"></div>
+            <div class="portrait-frame">
+              <img
+                alt="عکس پروفایل طاها رضاپور"
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgwKCA0MCwwPDg0QFCIWFBISFCkdHxgiMSszMjArLy42PE1CNjlJOi4vQ1xESVBSV1dXNEFfZl5UZU1VV1P/2wBDAQ4PDxQSFCcWFidTNy83U1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1P/wgARCAFAAUADASIAAhEBAxEB/8QAGgABAAMBAQEAAAAAAAAAAAAAAAECAwQFBv/EABcBAQEBAQAAAAAAAAAAAAAAAAABAgP/2gAMAwEAAhADEAAAAflwAAAAAFrGc6ik2EJEJFYuM41GLWpRMAAAAAAAAABOpnpeCEwAIkQkIkQAABS4yjWhUAAAAAAC9tSEwEQSiCZrIIEBM0F0SQkQAAClNqmYAAAAGsbEwEQgqSRSJAJtQaxTUzjXIWqNFbEAAAArntQoAABaOglIiQyrEC1ZKpuUbTLlXWllb1uKSIWgXzsWiRCRCYAAM67ZEAEmmwAFci+V6ES6CevXfHTG3RpnXm+f7fm6xhp3SedX06HBh2c2s5Smy0xIAiQICRFLjFMDXLrLVtBETkViBpTWC3bG2N66Z6Z3e9NZefo0y1mLeblZ6zh7c6y8j3uG58adKdOcabelnfix6nmWQLkABEjOmuRPdzdRSLQRhvkM71Lqyd+3LrjfTpltnd9KVM/H7J3jl7ERrty6qd1s3wsvZ8jefdvhljp0eP6/nWecmOnEAACMtsjr065jgjSlVi0GVdMi0WzOjp4d869CeDJfX6/B9XOq06rx4dPTpqU673l6K745uXn+jkZ9vH1Vjx93n15g6cYAAApep9Btl0Zvn8Ptcdec0zsjPWDnnXItCCuvQl5vQ87qX1se6nPpeKSuXXh2E5a5plTSJee8+fZ6XiOXeJGsIkQABEwfQdHJ1Zta3HHxexieRHXy6lYkYt8y0JlzuH0O3kd2O0zlvLfbKzOlJiWgKc/RzXNPG+i8HeMxrKAlEiJgRMHs93ketmyiZRJh5PseRqZJmysxBTWqWaXiWNsbHt9HDXPT0MOToOi+bKYUWOWrWfQ8n1+M8UdOQEJgAVtQ19n571I9S/m9ku9qWMvI9fyay7OP0U5ub2eI4ovWrK3lotnLfv4dm/Qv5PpZvRracsePfzLI9Lk7rNstKZ18/Tq5u3GAAQmBnpiR3cOx2aZweh1eP0S9/k9/AZeh5/oJ10ul4eP2OavLjXGzSKWla47S+hpzznfdn5NU6Iw9Cyeyts7mtqnm+f7Pjb5wmNZAArjegB3W5OsTAvRUnv8AP7I9FW8sVvC+Vx9/DrNZBExLe+BdIreOr0ubfO9Zz0zZpehl53o11nxWuXTnCYETkVgAHXyWO5EkRMEXpJ2dnk7R6zlmXm4dOXUtTMNsbmpM1GuesdXTy9Od76Y6SzSakSlM/L9vCzw5pPTmwtUAAA06+DU6jMvXLM3zpBasAABMDa2Wku2s651TfDRejTDXNvK61nSEed2fP6zSiu8AAAAAXvjY0hNkJFaawua6KAhaSN8emXp62vPpzx6GRz6LVrovDDHxNZvyq7wAAAAAABN8xrOWlJiUhMLEXFb56Fa3rF/R8pL9Ht8ul9/PxJPa4OOtlqQsAAAAAAAAAAm+Y2rnJqzkXpJaEBUWUgtEAAAAAAD/xAAqEAACAgEDBAICAgIDAAAAAAABAgARAxAgMQQSITAiQBNBIzIzNBRCUP/aAAgBAQABBQL6FSpUqVKlSpX3Kle2pX16lfSr6gH1q+gB67l+0j3Ku27lwkzug2VpfsI9ijbyZdbb+iR6lG2/N1P1uEE42D1kegC9pg49I5+gd4FDYdvbOydsqhooh0r6iDcRqIqxcYnYJ+OOnx7fCL3MVpikqEGEe47aoamXL1RYi6ASplIUcjElYjjuHHChjLUOo96DzsOl6IsUQbDj7p+IdoFbGSZU7TP3ACfWdUHx1bWviPJUaCDQaPlCxs9zuJi9wgOmaiCs/ePEcjdpMdC049J0HOw88KIfEXlYNubMFBZnKrAKgykGmJKgT8NzLj7JjFv/ANVWo6zqB/J6sf8AbY0bheTyORBBoI3DJbdkBCz/AJIEDs8DF4qBdMi2PKMPKl8gKvc6oV6jzgWwdhh4XluYDBBLiNK8KCQ6muW/H5VLiCmrQzKk6c/Hx3Og7ur/AK+lp0qfwOkI2HYIDDkqfkMD+Q94sZHYRYOODH5EAtzqRcX4y4TOr/r6Tx03+uRHSEVsK6cwQmVcrTp6MfFa4LBqVDzjWoYdTB2tPAmd+/L6Txg/wRo6QithEIiny3Kr8SwUFrmBvmDGUGKxhswReNhj9yNkdig9X6wf4NDGSMu0rOZfxXzDyn9sXmGF0ur0G0w/2zIDj9X66b/X2MkdNg8krB5g1xZancGAwpQFDcY3P6cdr+k8dGbw7cg8NzqflPO1CWKPpYEbMBA17CZdv+upXz6Tx0Tbn4fmVsBlap4ZiIXgQtExgbCZkeYh5mdbT0tMDduQPAdj8PzFW46b+ILJUVO6d0HmVDHaoPkcY0aMKb0NB4NxXitq/D8zHCtx0hG1pjbtheLZmNDFEMdofkVEXQzOKyerGbWBorwGPw/Mx6ER0hFbkFxPED1PyeGyR37iIgg16keN540xmm0uK87/AA/Mx6kRkjitqGojTItzvIhYmCY0gGpmQWN7bFNjW9cWwzLtuAzvOuJYNhhmdKb1IaO7GYDszbD42jlfAuDUwxh3K6FdrbkNjaDFeK2ubQmoW0XjVYDBBtEdZkxMo0PjeDRBsblaorxs6LHzhoW2LsEEEGh1GlUmh9CtR2WBO8TvM7id41UXKiwbhp1GSkh9StWhap3E6V6gdEhEqtRoNcrBEY9xPsDbq9AiiLAIVlaLoNMjhFy5DkJP1iNalaYsnbB2sFE7YVlROa0y9QqTJkLn6N7TpUqDYrFYnVReoxmd6GM6wZkWN1ax+od4T9W9g1/fqv7F6DU/+NcuXAZcuXL+j//EAB4RAAIBBQEBAQAAAAAAAAAAAAABEQIQIDBAMRJg/9oACAEDAQE/Afy8caRA0QRvWH0SOypGo3e3gatV5skTtBFmIq82QL0jKp7pyq4Iwe9MmbNi4ZJwq4Vdrla5KnuWLfBJ9H0T1f/EAB4RAAEEAwEBAQAAAAAAAAAAAAEAEBEwAiBAEjFg/9oACAECAQE/Af1RKlBSpvOnlQgxKB4ZQLY2QoaXDD7adwOTGkVikblgjWd40x4S4PKDyYi46gcELyvKjq//xAAqEAABAwEGBQUBAQAAAAAAAAABABEhMAIQIDFAUDJBUWFxEiJgcJFigf/aAAgBAQAGPwL7Y5fCXUI9dmPxaFknTXRshXYL1HngjYs0yajAJ100IXRe0sAmtZ8jrO90rhKDhFiwUk2ipi4DA/XXdVkyaz+4IQK/lSrNMmu6frdN3ZN1wtdCHmm/fQeExUKbrI/3HnKsinZryns5prRv9uafni73RkKdjxoX5rkpLeE1nLG4WdSx4qMi9wv9LrOiWqWaTXd8LOoE0yKfg0oWcrPCyY0wadoVWrPcdbCnG+AjXzuIOvii2xPjfrtDbU4kaSSstGX0eel9I57POzuVOtnJOKDCSntHXwV7h+LiXEP1cQXEoBKzYdvoP//EACgQAAICAQQDAAIDAQEBAQAAAAABESExECBBUTBhcUCBkaGx0cHh8P/aAAgBAQABPyHzwyemJAgQI6ZkflpmLuQl5GjH1/HTsSr8GJH1/DSbwJXv8VqRw/An+CUKtnI6+isSk50aaE/J0eaS3smMlkLA7wkIU69Iwg7U/rKeWiIXDk+qj0lmHonx9Hk5XsyO6FgWPpVCz2K8sjSSDz/g7XMehrtfwX9K5Wkx4+TxS28bHkTLoQruxKZHkwfSfZngyM06IvGRxR1OvryOTwTCI2NCGofQ8CvX9aJcP+daJGRucao+iteNIe/7GzjYTIli0Lqr9D+Qam+9OR4MhKeCS41T8bUrdZO1KeTnow9Elk57AsEEc0awWZDb0SQDD4v3A/NvQhAyhizohY8a87MigLYw/cklUDvJFk+RCwkQ9BCSs8ENKjkYtwGKm1hQMGvg5ZDDEpPbx5WyaXWxuENIomyTWWkOyUiKCENdDXjDmiGFUXXiBwVgaENMYHoxQasX/wBANNOHT8S3rB9bGuDJAls3S/vQ0C0MLQqE4c+SbE/sepX7ZPQxKTUjF0vrMwyFxNNOZIEYskuRL/8Aj8DTZp5XhStElFtuGrDKiCRlmAahhWJCE4IUrFw5FLJv0iB/ZySotT8keSbU5gdx0xCa9PSEtSpnagoSQrMSaZLK/aIPRnxOmJPyPYg1H2YNCocYxJosdZRZf+EF/wBEQ0Gkn+wkuDKcipKjvoL6t9jJsaQeSHiORnmWjowuR/erx38JCRsSUcSwV+CkuxYh/rSeGRgdIOFkJthFZxkxCZGZRTOvQ1FwhFphP7KIaEL5KLcOBwj3kgPYW748ab2NpwbF/gVMyr/Rj5sebGNUhcjdf6OIk5wFcAR0IgRNQiMsz/ASEMZiCpqJy2ovsQlUnGj9vxyx8/8A0kWnM2cyLRCssidkAmYUMES+hXOExhMkKenDGcl+nlaGpSCT/j6cxLZejIZAsOSJ/Yh8i2cCPFk1xJKNuQyHBFBmUUpsgSUsc8v+iKHZUPeC8kmLfaZwhev+i6gjsJEBjGNCnU7yPk09GPieQ+gYkkw1MjZZ6E/3G+gCCjhopCpOJFZEki2TXQlGB6GPYwdESFgWPE8hp+P/ALrBBIQD1WDtRG6plMPASKGhVZJhjxI3yLM5W5bKoXQpJGc6np9HZ+4eLIUPZtgSFjVavIkkr2+yJT/gypHo+5gXZERZdHJaGKRCGxsnSpISEXdp+OiXzfkk8Ps+wfYgY0DKLmyepaFUtwhrLt+ylsIKHOQWD3ZX4sCJ91oS7pWSIQDUaNSJyrzoyZD5SRlnliVQhFBTTGJSiBHBZHoB+HIaB9HFrkgJROdlrJiRNGDSYM7Ae1CFfQmrESHFJDP1lgsLVMPu/C3L0retHLTl1JZMdJFqZicMkek4VUQhomxK8hCyxkXB6HO9DcDPgPA8avmPVQ03IXCyY6yExK0TjYkEeWtGBoGUIoIEJkaJfsNQ4e9rjZDvWSY3IjDYlCj1jQ1YK8jfZJO5CkyLY1XG43CnbWcPciMS9XgQerQkzexZgKkaLCHqJnHtV3taXG6ueVui05RMeNDEhvFEjbNXpX0IbGPShqYP+ilCvR4b3SIRItyeq0UW9KxxnBLitjbF0uMSNo9EHoVnJPI0vwfKM7HkMasWN2KHlNvoxaSBwGQwhMdiRAlnDFMZn/WjT4sZ4MivYYI0NeIRiIYuATgT1oQQPL+I7GsbG48jEomitrDW/IayaokR6RREjIgXSXP67JbgsLrzicCc7WiIewWjglwkhJbKIMkGiEcBJ0ETvw1wWWMbn8FdhaLTAWB6GOxvLkxeP3jon1Eajf8A2hmpfBJXnuia/Q0Dc/hpwJGc6PGwq3pJ0mBy/HnTKZlsIZO2SfzJJ6WjQhIiNNSX3+B//9oADAMBAAIAAwAAABDzzzzzzTww47yjDTzzzzzzzzzySYJLJL7755jzzzzzzzRarYIpLIbL775jzzzzzRbo8pY4qfar7775jzzzTKJnKBL3MVgJrLb75DzgIJbbVwnM6JrqYpobLjThI4rkPEv3ygGU5764JJyDIg6EVrNSsTfjybb44qR3CTFGbwLOYUc+mQr764ZmASZ1XnCOSbnjhipL744mnfCojJECpWKgm2p4pbo975wRx4883W3CgC4rb77/ALtYvRMp2KA7PleRqK2uoWoEP5E8qaZvZkEG2+O88aiW/BE9GWcWYf6dK2+c84C++jZh6lwnqI89JqU8888mWe2CCQ9Vc7Yl5+8888865x0mC+eHnZz908888888c4l4oo2KTbSs8888888888sKu6imO8888888/8QAIBEBAQACAgICAwAAAAAAAAAAAQAQESAhMDFAQVFgcf/aAAgBAwEBPxD9X2tfBDeHS7o6zU8w1GHRgbRNY2+534iGJkZoI0wLUxz9cRx2EHWJpENl6Xs5pw+o/KZHtswxjerb1yMJw9xGxf2WMMPvkZcmB0wTku3UdnLdvDEmBwQQsgTJp5jMYTAx7vTqadsGph3vwmXBbYumG2EieEbc4MEYcE+YgiM/R5l33BayJ6l35xHq3t5b8r//xAAfEQEAAwADAQEAAwAAAAAAAAABABARICEwMUFAUWD/2gAIAQIBAT8Q/wAvp/CXKNRR7wkfZbGjWjiN2sZp5MSMIITVjpFTQpd8t74pRxN7ouxIsj9537B4fs3+oOoP4zKaDZl3yaGDfykjTRF+cn7yNPyZEyww2PHkkSzBpIRpkEVDpzSFhn2JGZ33R6i0us8WykmV2vBg788UmQppjwQfZixjejvsOuosGNa/Z890P2YmIA9dm8N8P//EACgQAQACAgIBAwQDAQEBAAAAAAEAESExQVFhEHGBIDCRoUCxwdHw4f/aAAgBAQABPxD743DDkQgeVnufmeOeGeOPkj1YhqmKNify9AY7YPK4aAH3OA/EQ2uIjSV/GzOjtnkHt/goGSMZy8RKc/wnaFzKuXo+r9b9kTn8xvb3/AXNxAUCj1q44obXECqR8DMVtW9RbAN+Wp0My4AstgHiA6lMr7LmU506+9oOODv6Ep0JegrZ8QDPXtmUKmoZtgDyblQarXZXxzC1oGt/1MeNe9QKbcXJKN4BnqLkbHqFPL3dwLvD9u3O3X3L6PHB6MWi2IqnHiBBUfpDTDarPBKUuTnlKLUR5GpkzkPaGzk9obPHdLm1oxf+iEVYmx6RAGQOmWFwvhgl1WYFVn8RrhE7PtXYb5PtXeB+/opkuCEQFtxLkjS3uWhasVjjmZLiHLF/1LVtXLcK/Mb8niY8Hm5yJ42R4BlbXEpNvA8e8SrWmJxRNHumAl+326sNc/YSvjlgAAYPV1MKbqBdbw97isV8w02ZxOc+g12l2t0X4nRN6tqau8JDye8WwR3Mx2c08MW+KZl8saOKK4SyAjpjm49X2qns3H1BbUGrlv6HMWgQ2U1EvGKbxBUBcZQMsHvL7QCLoYURGsz/ACPEajP/AL5jZu7ljoHMwp1z3EDTz1qa2XtmOMD8TZ1W5V4+3jIlNfTZbo17x9D0CgDPzFvQeWNoO/ETMrCK83T1AgInumJy+TFtmVSZIrBRD8xFxRRKWOMr0S1TGg6lpK18agiUU7y6iKFXNtEZ/sSs+023juZ8vn7f5m/oBQG2EBxH0JhqJecOjUsNL4zFsl7hbBv3l28CCnyEhUA0eIQ1iF469plI7hyHbAEYX/GVsClMZMYmnAC9rGbBeFIVTVOjLFmA6rcwPF7IMCXmNajWyOmlXFJH6K+pLB5iU0+ty9f2jH05iWmrq5zFfFxxoPNBcFiyr1yxTafmW8A+8eGZtVR0kRMt7h1MfDb3gDU2XavmKqK9i6hpSjnhlt/0S0qoTVmopaagIuDAbBiAVWzrqKkg5FFQIbEr7VVu/WjecvR9LODllKwQs1zEUJwdoat1eXuAEDcNVU4PJLGEhzVVKZsZCz4YwAg6SZY1c0jARTaNRswe5BQ3g8zLH0u2KGX00kUKjghzDdhtCrifrcOHLEBlvke0MpEpHj7Nz7M+lEctRKANEY+js6mlZSt/uWLC5Q26CKg6uUg5mX3ma+Jkvqa26gi1iNLNBGjZhXMOwtYdoHQukAKgFRQ/7A4UVdHlXMKMekr8xcE90fzEu0pXLDvKXPkhOCplJWKUL9o5HFZOklRWqX76f6+0LDqVj0WCJmMZWWd3UswL2qC+y4qLum2Oh4uHhjLjNR8oClymXcaU4bIuEOXTw7Zm1jtcy1AHbEgnihAQDl3TqPF739IUM3a2w1xDvBdS84e45PAGiEqyRWiHT5nUzDWNXvfpUr0r6TVu4hxpB/cd0kYxguJCFhejw8xZIG1ijEC3GVKqIXuSwFwTJmEw5ZG5fwWd30ewYiWmLqBYTiEQVl/JLlw9EoTWMdD/AKf1ChN1TaMoo1mvFxjmKLAtAwSyVGtvCAj4Y/H/AM9WX9QwMJaZZ+KJuQzGdJGPoJl229eYmlt9ohUlDFJpu/6RqXKQWUqHPiC0u74g7TuBilhbfkRA/I7OH8RWWUpUFGmUyLIMoA4lDMEvAE/a1DoNhD3N/MIKL8RQYW3UGvaMkBAHZriCTwq/98/aN/Ke70/tDuYCLUdMYleiXvTiXH6IK0nxN09vcrEwf1GSEuWa7lLBXuaV285gzm64HmoRm4pLQRJHER+X+pQMkZxGrW9nHuf5uGG7Jfb/AMDqK29zohzmOUehxAUXDAuY4BXMuRdAmnv6K+o37UNf+W2ZqAUYakI6ZqVEgNJKt5EoVwu4M73R5nZ+Z8DJCog9CiI68pcXxBHeAxB3FPC/+TCC9xLX/HxAAe7P/m4JBsD063A4a9C0Yktgq3iPiCaTkQbfW+v6kyfFf7Zv2ggioYaJegmG4kSIOGIWDs1LBij+5WrGSEO0eWCKr6zH45gAJnmNlaupkY+FLheUuk4nFY4lWU0m+Ymb4iQYhL0FYR5hmLYo6ndtjH7H6kLxUfhRY5jCUzCK1FuhCikZUUSrdL8xnbC5OorBrcd+ZS/tMjzM4u5RYumOMHoGyFnRvMEtq5j4Sp8ELuI4tbTbH8QESDh4qdfmHs6+1+pLk7F+aY6hElQsdxViWB6VBpSiiNy3oG22a9+/fe5iAKcwAA0wg/7Nt8Go1QNEDZxzUvB1iUUZETbzBIiLWIRIUQamTUwhg5zMS4bmBUrw0/4etfW6UtF3T/T/AJBEjs9D1d0rMEl1Er0Q5k7nPvFFe2uMxLvc4NHoEc7FMQkHBw5jLCVguIF8FOZV7o2qYpecS0bYgOZVQ5nMJgxlSDBT4j9lYEV94Kod7g1zLxBhzDG6aJSxWoRFTKg+CaY9OjfmJAsfgQCXHnqGmDYeCGWBUuMRqZmLUdDAXMCNfBDPBHEEWy8RO4D6mceiuvRFB2hmQvAsjrLAJmFpDUycGU1TXC0Si0IjpPTJcsGOPS1KFwQCFO4sUruU9LncuAX1BzkMwajO2p4hgUAxKGXiVpmFME/x9m4e30yLbr44g0x3csoWGZn8ZtmqFpNEPMTahFWvStx8kolmpnHOpstQdAqWpQdyhAICoSoGuTFYBimyGjJ7EqNkKmZaHlT8+j9Vh249aMXhYsuOsMQq2FXcRYTRHh6JA2IYWpYkYi8SxjvEt06jGlGUVf8AdLbzOYPS4mQzKygWZ7gWV7T2LnZiwwW+FX08RECkafRPps8Xrqd2GH3l+ghgRVx1NiaIESVcyoIrBD0VxCmEpi+UMTCWNrLM8GJjzWoNY0bjZUwyzZqLi4Kb8xqfu8Pq+t1C22/Rl3Q+txjFTBRmcjDMDMOUyMErMqDe+DuKAGkuVM9wJXQQVVcEMMa66i24mMRKe8yI4HCfiLN0FWOPf6cI0fVlTu8nqxZcR2MYoWADMu1mZKCr9GybeiIKHu5inbLgdYlenMWQjtWywBwe+/TQK3MUUOJpFWZB+fD4mAW5ogvl6e6uvrFbj9wlqf16MZzBlHMdAsCjMchfev1EodBUv8RzQp75l+PWqyDNwMwzLc8T/Zg3O1hhmyATc9kMzMwsQVse0XhiNcnWyLc/j7DZsvZ/sEAjY6fRlTWJNAV+I1kHxmCUo6XEtOPxGX9D9li4gythb6iARH2YlmY8GZf3LKXbha8RCEBngZZyULG8OflxHuWqNfaZ8n9QQCNjMMZeJjAo8Ra3QT3RSalx+q4B3HbCGQnmoBhIWgL6lw7lfd+IrTfzEPPolzxGtcTJePJXslZRfBoOpbhr7lyrxJaMa9azNQHJEIF/UFwmbBSYiv8AE4i5m0/E6UYOPQwT/fQoBjasaOS6Je6sXGP+yzBr7zrx1AFkdQjh9LDMQDLiw9US5hK4QMr99ntDRm5OP+S8Gnc4CXmtQjdF+JoZtMBgSTtMe5ibgAcB0Ef2fwBRshuMHuLZExqWbJuGFYhLcaxXRjGrjhhnxE7hKtv/AKxKOj4MRuU/CEt0+MHsF0FlE7wgSpN7xfvcE1liK3+G6smMcMNz0EPFdTie8+Cx0RiRKhBrTBMt3Le7ifJieB/HEIkO5+IaiPiYMj6GkYrIOo5Zw9yv/Eq/PtDcaNsSazFP8wQ2MA3TPMlAplIbnu/iLNNzBxFvB7xYpVfwP//Z"
+                alt="عکس پروفایل طاها رضاپور"
+              />
+            </div>
+            <div class="portrait-tag"><b>tahivo</b> · Personal Portfolio</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-heading">
+            <h2>مهارت‌ها</h2>
+            <p>
+              ابزارها و حوزه‌هایی که با آن‌ها کار می‌کنم یا در حال یادگیری‌شان
+              هستم
+            </p>
+          </div>
+          <div class="skill-grid">
+            <article class="skill-card">
+              <div class="skill-icon">W</div>
+              <div>
+                <h3>WordPress</h3>
+                <p>ساخت و مدیریت سایت با وردپرس و آشنایی با قالب‌ها</p>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="skill-icon">W</div>
+              <div>
+                <h3>Microsoft Word</h3>
+                <p>تایپ، قالب‌بندی و آماده‌سازی اسناد</p>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="skill-icon">X</div>
+              <div>
+                <h3>Microsoft Excel</h3>
+                <p>کار با جدول‌ها، فرمول‌های پایه و سازمان‌دهی داده‌ها</p>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="skill-icon">P</div>
+              <div>
+                <h3>PowerPoint</h3>
+                <p>ساخت ارائه‌ها و طراحی اسلاید</p>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="skill-icon">&lt;/&gt;</div>
+              <div>
+                <h3>HTML &amp; CSS</h3>
+                <p>ساخت صفحات وب و تمرین طراحی واکنش‌گرا</p>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="skill-icon">Py</div>
+              <div>
+                <h3>Python</h3>
+                <p>یادگیری مبانی برنامه‌نویسی و ساخت پروژه‌های ساده</p>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="skill-icon">AI</div>
+              <div>
+                <h3>هوش مصنوعی</h3>
+                <p>علاقه‌مند به یادگیری ابزارها و فناوری‌های هوش مصنوعی</p>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="skill-icon">Ps</div>
+              <div>
+                <h3>Photoshop</h3>
+                <p>تمرین طراحی گرافیکی و ویرایش تصویر</p>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="skill-icon">PC</div>
+              <div>
+                <h3>مهارت‌های کامپیوتری</h3>
+                <p>آشنایی با نرم‌افزارها و کارهای عمومی کامپیوتر</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-heading">
+            <h2>پروژه‌های منتخب</h2>
+            <p>نمونه‌هایی از ایده‌ها و پروژه‌های شخصی من</p>
+          </div>
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="project-visual racer-visual">
+                <div class="road"></div>
+                <div class="car"></div>
+              </div>
+              <div class="project-content">
+                <h3>NEON RACER</h3>
+                <div class="project-type">بازی تحت وب</div>
+                <p>
+                  بازی ماشین‌سواری با فضای نئونی، کنترل ساده، جمع‌آوری سکه و
+                  تلاش برای ثبت رکورد بهتر.
+                </p>
+                <a class="project-link" href="#contact"
+                  >درباره پروژه <span>←</span></a
+                >
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-visual tahivo-visual">
+                <div class="tahivo-logo"><b>✦</b> tahivo</div>
+                <div class="visual-caption">BUILD YOUR IDEAS</div>
+              </div>
+              <div class="project-content">
+                <h3>tahivo</h3>
+                <div class="project-type">برند و وب‌سایت شخصی</div>
+                <p>
+                  فضایی برای معرفی مسیر یادگیری، نمایش پروژه‌ها و ثبت تجربه‌ها
+                  در دنیای طراحی و برنامه‌نویسی.
+                </p>
+                <a class="project-link" href="#home"
+                  >مشاهده همین سایت <span>←</span></a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="about-box">
+            <div>
+              <div class="eyebrow">ABOUT ME</div>
+              <h2>
+                یادگیری مداوم،<br /><span class="red"
+                  >قدم‌به‌قدم رو به جلو</span
+                >
+              </h2>
+              <p>
+                من طاها رضاپور هستم؛ هنرجوی رشته کامپیوتر و علاقه‌مند به طراحی
+                وب، وردپرس، برنامه‌نویسی و هوش مصنوعی. دوست دارم چیزهای تازه یاد
+                بگیرم و آموخته‌هایم را به پروژه‌های واقعی تبدیل کنم. در کنار
+                تکنولوژی، کاراته هم بخش مهمی از زندگی من است و به من نظم، تمرین
+                و پشتکار یاد می‌دهد.
+              </p>
+            </div>
+            <div class="facts">
+              <div class="fact">
+                <span>تمرکز</span><strong>طراحی وب و وردپرس</strong>
+              </div>
+              <div class="fact">
+                <span>در حال یادگیری</span><strong>Python و AI</strong>
+              </div>
+              <div class="fact">
+                <span>ابزارهای اداری</span
+                ><strong>Word · Excel · PowerPoint</strong>
+              </div>
+              <div class="fact">
+                <span>علاقه شخصی</span><strong>کاراته و پیشرفت فردی</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="contact-box">
+            <div class="eyebrow" style="text-align: center">LET'S CONNECT</div>
+            <h2>بیایید در ارتباط باشیم</h2>
+            <p>
+              برای آشنایی بیشتر با من، از لینکدین بازدید کن یا از طریق شماره زیر
+              با من تماس بگیر.
+            </p>
+            <div class="contact-actions">
+              <a
+                class="btn btn-primary"
+                href="https://www.linkedin.com/in/%D8%B7%D8%A7%D9%87%D8%A7-%D8%B1%D8%B6%D8%A7%D9%BE%D9%88%D8%B1-8853b439b/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >پروفایل LinkedIn ↗</a
+              >
+              <a class="btn btn-outline" href="tel:+989302763907"
+                >تماس: 09302763907 ☎</a
+              >
+            </div>
+            <div class="contact-note">
+              با انتخاب شماره، می‌توانی از دستگاهت تماس بگیری.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <a href="#home" class="logo" style="font-size: 22px"
+          ><span class="logo-mark" style="width: 27px; height: 27px"></span
+          ><span>tahivo</span></a
+        >
+        <div class="footer-copy">ساخته‌شده با ♥ توسط طاها رضاپور</div>
+        <div class="footer-social">
+          <a
+            href="https://www.linkedin.com/in/%D8%B7%D8%A7%D9%87%D8%A7-%D8%B1%D8%B6%D8%A7%D9%BE%D9%88%D8%B1-8853b439b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn ↗</a
+          ><a href="#home">بازگشت به بالا ↑</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      "use strict";
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+      const navItems = navLinks.querySelectorAll("a");
+
+      menuToggle.addEventListener("click", function () {
+        const open = navLinks.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.setAttribute(
+          "aria-label",
+          open ? "بستن منو" : "باز کردن منو",
+        );
+        menuToggle.textContent = open ? "×" : "☰";
+      });
+
+      navItems.forEach(function (link) {
+        link.addEventListener("click", function () {
+          navLinks.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.setAttribute("aria-label", "باز کردن منو");
+          menuToggle.textContent = "☰";
+          navItems.forEach(function (item) {
+            item.classList.remove("active");
+          });
+          link.classList.add("active");
+        });
+      });
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                navItems.forEach(function (link) {
+                  link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === "#" + entry.target.id,
+                  );
+                });
+              }
+            });
+          },
+          { rootMargin: "-25% 0px -60% 0px" },
+        );
+        document
+          .querySelectorAll("main section[id]")
+          .forEach(function (section) {
+            observer.observe(section);
+          });
+      }
+    </script>
+  </body>
+</html>
